@@ -1,0 +1,137 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+	border: 0;
+	user-select: none;
+}
+
+#root {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-block: 200px;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	align-items: center;
+	color: #5b4327;
+}
+
+.app .game-cont {
+	box-shadow: 0 0 10px 5px #ccc;
+	border-radius: 10px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 20px;
+}
+
+.app .game-cont .word {
+	display: flex;
+	gap: 6px;
+}
+
+.app .game-cont .word h1 {
+	width: 35px;
+	height: 35px;
+	font-size: 24px;
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 0 5px 2px #ccc;
+	cursor: pointer;
+}
+
+.app .game-cont .word h1:hover {
+	transform: scale(110%);
+}
+
+.app .game-cont .word .active {
+	background-color: #0f0;
+	transform: scale(110%);
+}
+
+.app .game-cont .letters-cont .letters {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 30px;
+	gap: 2px;
+	padding-inline: 5px;
+}
+
+.app .game-cont .letters-cont .letters h2 {
+	cursor: pointer;
+}
+
+.app .game-cont .letters-cont .letters h2:hover {
+	color: #f00;
+}
+
+.app .game-cont .letters-cont {
+	display: flex;
+	align-items: center;
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 0 10px #ccc;
+}
+
+.app .game-cont .letters-cont i {
+	font-size: 20px;
+	cursor: pointer;
+	padding: 5px 8px;
+	color: #fff;
+}
+
+.app .game-cont .letters-cont i:hover {
+	transform: scale(110%);
+}
+
+.app .game-cont .letters-cont i:first-child {
+	background-color: #f00;
+}
+
+.app .game-cont .letters-cont i:last-child {
+	background-color: #0f0;
+}
+
+.app .game-cont .hidden-words {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 30px;
+}
+
+.app .game-cont .hidden-words div {
+	display: flex;
+	gap: 3px;
+}
+
+.app .game-cont .hidden-words div h5 {
+	font-size: 24px;
+	border: 1px solid #aaa;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); color: red; }
+    50% { transform: translateX(3px);}
+    75% { transform: translateX(-3px);}
+}
+@keyframes correct {
+    100% { color: #0f0;}
+}

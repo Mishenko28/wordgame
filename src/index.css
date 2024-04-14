@@ -79,7 +79,7 @@
 	width: 30px;
 }
 
-.app .game-cont .letters-cont .letters h2:hover {
+.app .game-cont .letters-cont .letters h2:active {
 	color: #f00;
 }
 

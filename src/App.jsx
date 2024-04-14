@@ -87,6 +87,7 @@ function App() {
 				anagramHidden.length == 1 && setLevel(prev => prev + 1)
 			}, 1500);
 		} else {
+			navigator.vibrate(100)
 			setAnima({animation: 'shake 0.5s'})
 			setTimeout(() => {
 				setAnima({animation: 'none'})

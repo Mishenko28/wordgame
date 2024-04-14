@@ -18,7 +18,18 @@ function App() {
 				'PRECUT',
 				'CRUMP',
 				'TRUMP',
-				'CUTE'
+				'CUTE',
+				'COME',
+				'CURE',
+				'TEMP',
+				'MUTE',
+				'CORE',
+				'PURE',
+				'MORE',
+				'POET',
+				'CROP',
+				'POEM',
+				'POUR'
 			]
 		},
 		{

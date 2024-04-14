@@ -94,6 +94,19 @@ function App() {
 		}
 	}
 
+	const handleShuffle = () => {
+		function shuffle(array) {
+			for (let i = array.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+
+				[array[i], array[j]] = [array[j], array[i]]
+			}
+
+			return array
+		}
+		setWordArray(shuffle(word[level - 1].word.split('')))
+	}
+
 	useEffect(() => {
 		function shuffle(array) {
 			for (let i = array.length - 1; i > 0; i--) {
@@ -124,6 +137,7 @@ function App() {
 					<i className="fa-solid fa-check" onClick={handleGuestWord} />
 				</div>
 				<div className="word">
+					<h1 onClick={handleShuffle}><i class="fa-solid fa-rotate" /></h1>
 					{wordArray.map((letter, i) =>
 						<h1
 							className={letters.includes(letter) ? "active" : null}

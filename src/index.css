@@ -50,6 +50,10 @@
 	cursor: pointer;
 }
 
+.app .game-cont .word h1:first-child {
+	color: #0f0;
+}
+
 .app .game-cont .word h1:hover {
 	transform: scale(110%);
 }

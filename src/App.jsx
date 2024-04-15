@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
+import dictionary from "check-dictionary-word"
 
 function App() {
 	const [letters, setLetters] = useState([])
@@ -13,7 +14,6 @@ function App() {
 			anagrams: [
 				'COMPUTER',
 				'COMPUTE',
-				'CRUMPET',
 				'TROUPE',
 				'PRECUT',
 				'CRUMP',
@@ -74,54 +74,47 @@ function App() {
 		setLetters([])
 	}
 
-	const handleGuestWord = () =>{
+	const handleGuestWord = () => {
 		if (anagramHidden.includes(letters.join(''))) {
-			setAnima({animation: 'correct 0.5s'})
+			setAnima({ animation: 'correct 0.5s' })
 			setTimeout(() => {
 				setLetters([])
-				setAnima({animation: 'none'})
+				setAnima({ animation: 'none' })
 				setAnagramHidden(prev => prev.filter(anagram => anagram !== letters.join('')))
 			}, 500);
 
 			setTimeout(() => {
 				anagramHidden.length == 1 && setLevel(prev => prev + 1)
-			}, 1500);
+			}, 1000);
 		} else {
 			navigator.vibrate(100)
-			setAnima({animation: 'shake 0.5s'})
+			setAnima({ animation: 'shake 0.5s' })
 			setTimeout(() => {
-				setAnima({animation: 'none'})
+				setAnima({ animation: 'none' })
 			}, 500);
 		}
+		console.log(letters.join(''))
+		console.log(dictionary(letters.join('')))
+	}
+
+	const shuffle = (array) => {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+
+			[array[i], array[j]] = [array[j], array[i]]
+		}
+		return array
 	}
 
 	const handleShuffle = () => {
-		function shuffle(array) {
-			for (let i = array.length - 1; i > 0; i--) {
-				const j = Math.floor(Math.random() * (i + 1));
-
-				[array[i], array[j]] = [array[j], array[i]]
-			}
-
-			return array
-		}
 		setWordArray(shuffle(word[level - 1].word.split('')))
 	}
 
 	useEffect(() => {
-		function shuffle(array) {
-			for (let i = array.length - 1; i > 0; i--) {
-				const j = Math.floor(Math.random() * (i + 1));
-
-				[array[i], array[j]] = [array[j], array[i]]
-			}
-
-			return array
-		}
-		setAnagramHidden([...word[level -1].anagrams])
+		setAnagramHidden([...word[level - 1].anagrams])
 		setWordArray(shuffle(word[level - 1].word.split('')))
 	}, [level])
-	
+
 	return (
 		<div className="app">
 			<h1>WORD GAME</h1>
@@ -138,7 +131,7 @@ function App() {
 					<i className="fa-solid fa-check" onClick={handleGuestWord} />
 				</div>
 				<div className="word">
-					<h1 onClick={handleShuffle}><i class="fa-solid fa-rotate" /></h1>
+					<h1 onClick={handleShuffle}><i className="fa-solid fa-rotate" /></h1>
 					{wordArray.map((letter, i) =>
 						<h1
 							className={letters.includes(letter) ? "active" : null}

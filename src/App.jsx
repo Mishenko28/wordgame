@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import dictionary from "check-dictionary-word"
 
 function App() {
 	const [letters, setLetters] = useState([])
@@ -93,8 +92,6 @@ function App() {
 				setAnima({ animation: 'none' })
 			}, 500);
 		}
-		console.log(letters.join(''))
-		console.log(dictionary(letters.join('')))
 	}
 
 	const shuffle = (array) => {

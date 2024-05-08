@@ -15,7 +15,7 @@
 .app {
 	display: flex;
 	flex-direction: column;
-	gap: 30px;
+	gap: 5px;
 	align-items: center;
 	color: #5b4327;
 	margin-block: 30px;
@@ -140,11 +140,26 @@
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-3px); color: red; }
-    50% { transform: translateX(3px);}
-    75% { transform: translateX(-3px);}
+	0%, 100% {
+		transform: translateX(0);
+	}
+
+	25% {
+		transform: translateX(-3px);
+		color: red;
+	}
+
+	50% {
+		transform: translateX(3px);
+	}
+
+	75% {
+		transform: translateX(-3px);
+	}
 }
+
 @keyframes correct {
-    100% { color: #0f0;}
+	100% {
+		color: #0f0;
+	}
 }

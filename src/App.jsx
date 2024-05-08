@@ -20,15 +20,9 @@ function App() {
 				'CUTE',
 				'COME',
 				'CURE',
-				'TEMP',
 				'MUTE',
 				'CORE',
-				'PURE',
-				'MORE',
-				'POET',
-				'CROP',
-				'POEM',
-				'POUR'
+				'PURE'
 			]
 		},
 		{
@@ -42,15 +36,10 @@ function App() {
 				'MORAL',
 				'RIGHT',
 				'LIGHT',
-				'MOTH',
 				'MATH',
-				'GRAM',
 				'GIRL',
 				'MAIL',
-				'GOAL',
-				'ALGO',
-				'ATOM',
-				'MILO'
+				'GOAL'
 			]
 		},
 		{

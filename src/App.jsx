@@ -41,12 +41,6 @@ function App() {
 				'MAIL',
 				'GOAL'
 			]
-		},
-		{
-			word: 'DATABASE'
-		},
-		{
-			word: 'SOFTWARE'
 		}
 	]
 
